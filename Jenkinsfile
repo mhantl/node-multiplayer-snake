@@ -1,5 +1,5 @@
 node ('Ubuntu-app-agent'){  
-  //  def app
+    def app
     stage('Cloning Git') {
         /* Let's make sure we have the repository cloned to our workspace */
        checkout scm
@@ -13,11 +13,11 @@ node ('Ubuntu-app-agent'){
         sh 'echo Build-and-Tag'
     /* This builds the actual image; synonymous to
          * docker build on the command line */
-      /*  app = docker.build("mhantl/snake") */
+        app = docker.build("mhantl/snake")
     }
     stage('Post-to-dockerhub') {
          sh 'echo Post-to-dockerhub'
-    /* docker.withRegistry('https://registry.hub.docker.com', 'training_creds') {
+    /* docker.withRegistry('https://registry.hub.docker.com', 'mhantl') {
             app.push("latest")
         			} 
          } */
