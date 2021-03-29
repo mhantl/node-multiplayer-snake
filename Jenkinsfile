@@ -17,11 +17,11 @@ node ('Ubuntu-app-agent'){
     }
     stage('Post-to-dockerhub') {
          sh 'echo Post-to-dockerhub'
-    /* docker.withRegistry('https://registry.hub.docker.com', 'mhantl') {
+         docker.withRegistry('https://registry.hub.docker.com', 'mhantl-myDockerHub') {
             app.push("latest")
         			} 
-         } */
-  /*  stage('SECURITY-IMAGE-SCANNER'){
+         }
+     /*  stage('SECURITY-IMAGE-SCANNER'){
         build 'SECURITY-IMAGE-SCANNER-AQUAMICROSCANNER' */
     }
   
